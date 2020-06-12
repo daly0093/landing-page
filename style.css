@@ -1,3 +1,39 @@
-h1 { 
-    color: green;
+main {
+    background-color: #f7F7ff;
+}
+
+header,
+section,
+footer {
+    margin: 0 10%;
+}
+
+header img { 
+    max-width: 25%;
+    height: auto;
+}
+
+.scooter {
+    display: flex;
+    justify-content: center;
+}
+
+.scooter img {
+    max-width: 50%;
+    height: auto;
+}
+
+footer { 
+    background-color: #fffd8c;
+    margin: 0px;
+}
+footer p {
+    margin: 0 10%;
+}
+
+.socialicons {
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
