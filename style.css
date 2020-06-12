@@ -1,4 +1,18 @@
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(fonts/Montserrat-Bold.ttf)
+}
+@font-face {
+    font-family: Montserrat-Medium;
+    src: url(fonts/Montserrat-Medium.ttf)
+}
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(fonts/Montserrat-Light.ttf)
+}
+
 main {
+    font-family: Montserrat-Bold;
     background-color: #f7F7ff;
 }
 
@@ -9,15 +23,26 @@ footer {
 }
 
 header img { 
-    max-width: 25%;
+    max-width: 40%;
     height: auto;
+}
+
+.boss {
+    color: #333131;
+}
+.boss h1 {
+    font-size: 5rem;
+    margin: 0;
+}
+.boss p {
+    font-family: Montserrat-Light;
+    font-size: 1.9rem;
 }
 
 .scooter {
     display: flex;
     justify-content: center;
 }
-
 .scooter img {
     max-width: 50%;
     height: auto;
