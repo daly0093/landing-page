@@ -37,6 +37,7 @@ header img {
 .boss p {
     font-family: Montserrat-Light;
     font-size: 1.9rem;
+    margin: 10px 0;
 }
 
 .scooter {
@@ -46,6 +47,21 @@ header img {
 .scooter img {
     max-width: 50%;
     height: auto;
+}
+
+.apply {
+    border: 1px solid black;
+    /*display: flex;
+    flex-direction: column;*/
+}
+form,
+.apply h1,
+.apply p{
+    margin: 0 10%;
+}
+
+input[type="text"] {
+    font-family: Montserrat-Light;
 }
 
 footer { 
