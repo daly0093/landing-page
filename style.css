@@ -22,7 +22,10 @@ main {
 
 header,
 section,
-footer {
+footer,
+form,
+footer h1,
+footer p {
     margin: 0 10%;
 }
 
@@ -57,81 +60,118 @@ header img {
 .apply h1,
 .apply p {
     margin: 0 auto;
+    color: #333131;
 }
 .apply {
     display: flex;
     flex-direction: column;
     align-items: left;
-    padding: auto;
     background-color: white;
+    padding: auto;
     border-radius: 30px;
     box-shadow: 10px 10px 10px rgba(128,128,128, 0.5);
     margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
 .apply h1 {
     font-size: 3rem;
-    margin: 15px 55px;
+    margin: 15px 10%;
 }
 .apply p {
     font-family: Montserrat-Light;
-    margin: 0 55px;
     font-size: 1.25rem;
+    margin: 0 10%;
 }
-form {
-    margin: 0 55px;
+.applied p {
+    color: #333131;
 }
 input[type="text"] {
     font-family: Montserrat-Light;
-    padding: 10px 0px 10px 20px;
-    margin: 10px 0;
     background-color: #f4f4f5;
     width: 100%;
+    padding: 10px 0px 10px 20px;
     border-radius: 15px;
     border: 0;
+    margin: 10px 0;
 }
 input[type="checkbox"] {
-    border: 1px solid #333131;
-    border-radius: 100%;
-    margin: 15px 0;
     width: 20px;
     height: 20px;
+    border-radius: 100%;
+    border: 1px solid #333131;
+    margin: 15px 0;
 }
 label[for="agree"] {
     font-family: Montserrat-Light;
     font-size: 1.25rem;
+    color: #333131;
     margin-left: 10px;
 }
 input[type="submit"] {
-    background-color: #57eeab;
-    color: black;
-    padding: 15px 35px;
     font-family: Montserrat-Bold;
     font-size: 1.5rem;
-    border: 0;
+    background-color: #57eeab;
+    color: #333131;
     width: 100%;
+    padding: 15px 35px;
     border-radius: 15px;
+    border: 0;
 }
 .applied p{
     font-size: 1rem;
+    color: #333131;
     margin-top: 30px;
     margin-bottom: 30px;
 }
 a {
-    text-decoration: none;
     color: #ff8480;
+    text-decoration: none;
 }
 
 footer { 
     background-color: #fffd8c;
+    color: #333131;
     margin: 0px;
 }
+footer h1 {
+    font-size: 1.5rem;
+    width: 70%;
+    padding: 25px 0; 
+}
 footer p {
-    margin: 0 10%;
+    font-family: Montserrat-Light;
+    font-size: 1.25rem;
+    margin-right: 100px;
+}
+.footerform {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 1fr;
+    margin:  0 auto;
+}
+.footerform .footerformhours {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+input#hours {
+    width: 70%;
+}
+.footerform .footerformcity {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+input#city {
+    width: 95%;
+}
+footer input[type="submit"] {
+    font-size: 2.5rem;
+    background-color: #ff8480;
+    color: white;
+    padding: 5px 35px;
 }
 .socialicons {
-    padding: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding: 25px;
 }
