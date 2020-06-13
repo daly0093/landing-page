@@ -1,4 +1,8 @@
 @font-face {
+    font-family: Montserrat-Black;
+    src: url(fonts/Montserrat-Black.ttf)
+}
+@font-face {
     font-family: Montserrat-Bold;
     src: url(fonts/Montserrat-Bold.ttf)
 }
@@ -43,35 +47,79 @@ header img {
 .scooter {
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 .scooter img {
-    max-width: 50%;
+    max-width: 100%;
     height: auto;
 }
 
-.apply {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: auto;
-    background-color: white;
-}
-form,
 .apply h1,
 .apply p {
     margin: 0 auto;
 }
+.apply {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: auto;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px rgba(128,128,128, 0.5);
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.apply h1 {
+    font-size: 3rem;
+    margin: 15px 55px;
+}
+.apply p {
+    font-family: Montserrat-Light;
+    margin: 0 55px;
+    font-size: 1.25rem;
+}
+form {
+    margin: 0 55px;
+}
 input[type="text"] {
     font-family: Montserrat-Light;
-    padding: 10px 0px 10px 25px;
+    padding: 10px 0px 10px 20px;
     margin: 10px 0;
-    background-color: #f7F7ff;
+    background-color: #f4f4f5;
     width: 100%;
+    border-radius: 15px;
+    border: 0;
+}
+input[type="checkbox"] {
+    border: 1px solid #333131;
+    border-radius: 100%;
+    margin: 15px 0;
+    width: 20px;
+    height: 20px;
+}
+label[for="agree"] {
+    font-family: Montserrat-Light;
+    font-size: 1.25rem;
+    margin-left: 10px;
 }
 input[type="submit"] {
     background-color: #57eeab;
     color: black;
-    padding: 10px 25px;
+    padding: 15px 35px;
+    font-family: Montserrat-Bold;
+    font-size: 1.5rem;
+    border: 0;
+    width: 100%;
+    border-radius: 15px;
+}
+.applied p{
+    font-size: 1rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+a {
+    text-decoration: none;
+    color: #ff8480;
 }
 
 footer { 
