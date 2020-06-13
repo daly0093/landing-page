@@ -1,25 +1,31 @@
+/* these four "font-face" blocks allow me to import my fonts straight from my computer. where the top line allows me to give the file its own name within this stylesheet and the bottom line allows me to reference and bring in the actual file itself. */
 @font-face {
     font-family: Montserrat-Black;
     src: url(fonts/Montserrat-Black.ttf)
 }
+
 @font-face {
     font-family: Montserrat-Bold;
     src: url(fonts/Montserrat-Bold.ttf)
 }
+
 @font-face {
     font-family: Montserrat-Medium;
     src: url(fonts/Montserrat-Medium.ttf)
 }
+
 @font-face {
     font-family: Montserrat-Light;
     src: url(fonts/Montserrat-Light.ttf)
 }
 
+/* this block changes the font for the h1s in the html document. also, this changes the entire page's colour. */
 main {
     font-family: Montserrat-Bold;
     background-color: #f7F7ff;
 }
 
+/* this sets a "worldwide" margin of 10% on the left and right. */
 header,
 section,
 footer,
@@ -29,39 +35,44 @@ footer p {
     margin: 0 10%;
 }
 
+/* this block alters the size of the Dash logo found at the top of the page. */
 header img { 
     max-width: 40%;
     height: auto;
 }
 
+/* this block changes the color of the font in the boss class in the html document. */
 .boss {
     color: #333131;
 }
+
+/* this block affects the font-size (changing it to 80px) and the margin (0px all around) of the "Want to be your own boss?" blurb at the top of the page. */
 .boss h1 {
     font-size: 5rem;
     margin: 0;
 }
+
+/* the same thing that's happening in the block above, is happening in this block, however we're changing the font to a lighter Montserrat. Also the font-size does not have to be as large as the above block and the margin will be different also to add a bit of extra space. */
 .boss p {
     font-family: Montserrat-Light;
     font-size: 1.9rem;
     margin: 10px 0;
 }
 
-.scooter {
+/* this block of code affects the scooter class, making it fit in the center of the screen and removing any margins. */
+/* .scooter {
     display: flex;
     justify-content: center;
     margin: 0;
-}
+} */
+
+/* this makes the scooter image itself responsive so if i were to expand the page, the image would adjust accordingly. */
 .scooter img {
     max-width: 100%;
     height: auto;
 }
 
-.apply h1,
-.apply p {
-    margin: 0 auto;
-    color: #333131;
-}
+/* the form takes its shape thanks to every line of code written within this block of code below. from flexbox, to the padding, to adding a shadow to the outside of the form. */
 .apply {
     display: flex;
     flex-direction: column;
@@ -73,18 +84,23 @@ header img {
     margin-top: 25px;
     margin-bottom: 50px;
 }
+
+/* this aligns the h1 within the apply class to the center of the form, changes its font-size and colour. */
 .apply h1 {
+    color: #333131;
     font-size: 3rem;
     margin: 15px 10%;
 }
+
+/* same thing here as above, only difference is a different font-size and font-family. */
 .apply p {
     font-family: Montserrat-Light;
     font-size: 1.25rem;
+    color: #333131;
     margin: 0 10%;
 }
-.applied p {
-    color: #333131;
-}
+
+/* this large block afffects all form input fields where you can type text in. whether it be changing the padding, border-radius, or background color.  */
 input[type="text"] {
     font-family: Montserrat-Light;
     background-color: #f4f4f5;
@@ -94,6 +110,8 @@ input[type="text"] {
     border: 0;
     margin: 10px 0;
 }
+
+/* just like above, this block affects the terms of service checkbox. */
 input[type="checkbox"] {
     width: 20px;
     height: 20px;
@@ -101,12 +119,16 @@ input[type="checkbox"] {
     border: 1px solid #333131;
     margin: 15px 0;
 }
+
+/* here deals with the actual text that goes along side the terms of service checkbox. changing it's font-size, colour, and more. */
 label[for="agree"] {
     font-family: Montserrat-Light;
     font-size: 1.25rem;
     color: #333131;
     margin-left: 10px;
 }
+
+/* the input[type="submit'] deals with the huge "DRIVE WITH US" submission button as well as part of the "CALCULATE" button towards the bottom of the page. */
 input[type="submit"] {
     font-family: Montserrat-Bold;
     font-size: 1.5rem;
@@ -117,58 +139,81 @@ input[type="submit"] {
     border-radius: 15px;
     border: 0;
 }
+
+/* this just affects the "Already Applied?"s line by changing it's colour, font-size, and the margin of it's top and bottom. */
 .applied p{
     font-size: 1rem;
     color: #333131;
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+/* right next to the "Already Applied?" is the link, this block of code affects just that. changing the color of it as well as removing any text decorations (such as underlines). */
 a {
     color: #ff8480;
     text-decoration: none;
 }
 
+/* this sets the colour for the entire footer of the page. it also changes the color of all the text resided here and removes margins. */
 footer { 
     background-color: #fffd8c;
     color: #333131;
     margin: 0px;
 }
+
+/* here we're affecting the h1 within the footer, altering its font-size to 24px, reducing it's width to 70% and giving it top and bottom padding of 25px. */
 footer h1 {
     font-size: 1.5rem;
     width: 70%;
     padding: 25px 0; 
 }
+
+/* same as above except we're changing the font-family to a lighter version, reducing it's font-size, and introducing a right margin of 100px. */
 footer p {
     font-family: Montserrat-Light;
     font-size: 1.25rem;
     margin-right: 100px;
 }
+
+/* here for the form within the footer, there is a simple grid applied that allows for easy placement and positioning of the elements of the form. the left and right margin is also set to auto while the top and bottom margin gets set to 0. */
 .footerform {
     display: grid;
     grid-template-columns: 25% 75%;
     grid-template-rows: 1fr;
-    margin:  0 auto;
+    margin: 0 auto;
 }
+
+/* this positions the "Hours" text box within the footer's form. */
 .footerform .footerformhours {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
+
+/* here, we're also adjusting the horizontal size of the text box to 70% to make it look visually appealing */
 input#hours {
     width: 70%;
 }
+
+/* same as above, we're setting the position for the "City" text box. */
 .footerform .footerformcity {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
+
+/* also same as above, adjusts the size of the text box. */
 input#city {
     width: 95%;
 }
+
+/* this block of code affects only the "CALCULATE" button found in the form in the footer. this changes attributes such as the font-size, both it's background-color, and text colour and adds additional padding as well.  */
 footer input[type="submit"] {
     font-size: 2.5rem;
     background-color: #ff8480;
     color: white;
     padding: 5px 35px;
 }
+
+/* finally, this block of code manipulates the bottom four social media icons to look visually appealing. the justify-content: space-evenly; line allows the icons to sit evenly away from one another. */
 .socialicons {
     display: flex;
     flex-direction: row;
