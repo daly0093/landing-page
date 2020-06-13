@@ -178,15 +178,16 @@ footer p {
 /* here for the form within the footer, there is a simple grid applied that allows for easy placement and positioning of the elements of the form. the left and right margin is also set to auto while the top and bottom margin gets set to 0. */
 .footerform {
     display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 2fr;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 /* this positions the "Hours" text box within the footer's form. */
-.footerform .footerformhours {
+.footerform .hours {
     grid-column: 1 / 2;
-    grid-row: 1 / 2;
+    order: 1;
 }
 
 /* here, we're also adjusting the horizontal size of the text box to 70% to make it look visually appealing */
@@ -194,23 +195,23 @@ input#hours {
     width: 70%;
 }
 
-/* same as above, we're setting the position for the "City" text box. */
-.footerform .footerformcity {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-
-/* also same as above, adjusts the size of the text box. */
+/* same as above, adjusts the size of the text box, as well as the grid positioning and order.. */
 input#city {
     width: 95%;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    order: 2;
 }
 
 /* this block of code affects only the "CALCULATE" button found in the form in the footer. this changes attributes such as the font-size, both it's background-color, and text colour and adds additional padding as well.  */
 footer input[type="submit"] {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
     font-size: 2.5rem;
     background-color: #ff8480;
     color: white;
     padding: 5px 35px;
+    order: 3;
 }
 
 /* finally, this block of code manipulates the bottom four social media icons to look visually appealing. the justify-content: space-evenly; line allows the icons to sit evenly away from one another. */
@@ -219,4 +220,95 @@ footer input[type="submit"] {
     flex-direction: row;
     justify-content: space-evenly;
     padding: 25px;
+}
+
+/* this @media deals with everything that changes to tablet view. */
+@media (min-width: 768px) {
+    /* the header image would have been huge if i kept it at max-width: 40px; so i had to cut it in half to 20px to fit nicely at the top of the page. */
+    header img { 
+        max-width: 20%;
+    }
+
+    /* just so that the paragraph text looks neat, i shrank the font-size to 1.5rem (24px). */
+    .boss p {
+        font-size: 1.5rem;
+    }
+
+    /* i used this block of code so that my scooter image will fit nicely in the center of my screen. */
+    .scooter img {
+        display: block;
+        max-width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* this simply re-adjusts the padding and border radius to the input fields within the form. i chose to do this because i felt like they were too close together and too round. */
+    input[type="text"] {
+        padding: 15px 0px 15px 20px;
+        border-radius: 5px;
+    }
+
+    /* this simply makes the checkbox larger because it was too small. */
+    input[type="checkbox"] {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* this adds just a tiny amount of more padding to the top and bottom of the "DRIVE WITH US" submission button, as well as makes the corners more sharp than before. */
+    input[type="submit"] {
+        padding: 20px 35px;
+        border-radius: 5px;
+    }
+
+    /* here, i wanted there to be adequate room for the "Already applied?" block to sit so i separated it a bit from the "DRIVE WITH US" submission button by adding the margin-top: 20px;. i also centered the text so that it's not left aligned like how it was previously. */
+    .applied p{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    /* this simply decreases the top and bottom padding of the h1 in the footer so that the footer itself doesn't take up as much room. */
+    footer h1 {
+        padding: 15px 0; 
+    }
+
+    /* this introduces a margin-bottom: 15px; so that it isn't hugging the form within the footer. */
+    footer p {
+        margin-bottom: 15px;
+    }
+
+    /* here, i'm setting up how i'd like the grid to be displayed, with three columns and only one row. */
+    .footerform {
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-template-rows: 1fr;
+    }
+
+    /* this gets rid of any margins that input#hours may have had, i included this so that it appears larger and also lines up with the rest of the grid elements. */
+    input#hours {
+        margin: 0;
+    }
+
+    /* here i'm reducing the length of the input field so that it isn't right up against the "CALCULATE" submission button. also, same as before, i removed any margins that it may have had to make it line up with the rest of the grid elements. */
+    input#city {
+        width: 85%;
+        margin: 0;
+    }
+
+    /* this gives a new position to the submission button, as well as changes the font-size, and the left and right padding. */
+    footer input[type="submit"] {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        font-size: 1.75rem;
+        border-radius: 15px;
+        padding: 0 35px;
+    }
+
+    /* the justify-content: center; lines all the social media icons to the center of the bottom of the screen. i also decreased the top and bottom margin to 10px so that it isn't taking up as much space.  */
+    .socialicons {
+        justify-content: center;
+        padding: 10px 25px;
+    }
+    /* for this final line of code in the tablet view, instead of having all of the social media icons squished beside one another, i have a padding on the left and right of 25px so that they are at least a bit spread out, while still centered in the middle of the page. */
+    .socialicons img {
+        padding: 0 25px;
+    }
 }
