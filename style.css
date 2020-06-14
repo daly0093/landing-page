@@ -311,7 +311,7 @@ footer input[type="submit"] {
     }
 }
 /* this @media deals with everything that changes to web view. */
-@media (min-width: 1024px) {
+@media (min-width: 1300px) {
     main {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -340,5 +340,81 @@ footer input[type="submit"] {
     main footer {
         grid-column: 1 / span 3;
         grid-row: 3 / 4;
+    }
+
+    .scooter img {
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .apply {
+        margin: 0 auto 50px;
+        padding-bottom: 30px;
+    }
+
+    .apply p {
+        font-size: 1rem;
+    }
+
+    .apply p:nth-child(2) {
+        display: none;
+    }
+
+    input[type="text"] {
+        padding: 15px 0px 15px 20px;
+        border-radius: 5px;
+        margin: 5px 0;
+    }
+
+    label[for="agree"] {
+        font-size: 1rem;
+        margin: 5px auto 5px;
+    }
+
+    input[type="submit"] {
+        padding: 5px 35px;
+        border-radius: 5px;
+    }
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    footer h1,
+    footer p {
+        font-size: 1rem;
+        padding-bottom: 0px;
+    }
+
+    footer h1,
+    footer p,
+    footer form {
+        flex-basis: 100%;
+        margin: 0 3%;
+    }
+
+    .footerform {
+        display: flex;
+        width: 10in;
+        margin: 0;
+    }
+
+    input#hours {
+        width: 10%;
+    }
+    
+    input#city {
+        width: 20%;
+        margin-left: 10px;
+    }
+
+    footer input[type="submit"] {
+        width: 25%;
+        margin-left: 10px;
+    }
+    
+    .socialicons {
+        margin-left: auto;
     }
 }
