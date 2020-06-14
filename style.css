@@ -59,13 +59,6 @@ header img {
     margin: 10px 0;
 }
 
-/* this block of code affects the scooter class, making it fit in the center of the screen and removing any margins. */
-/* .scooter {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-} */
-
 /* this makes the scooter image itself responsive so if i were to expand the page, the image would adjust accordingly. */
 .scooter img {
     max-width: 100%;
@@ -98,7 +91,12 @@ header img {
     margin: 0 10%;
 }
 
-/* this large block afffects all form input fields where you can type text in. whether it be changing the padding, border-radius, or background color.  */
+/* this hides the extra words under the "Apply Now" header that will only be visible for the web view. */
+.apply .web-p {
+    display: none;
+}
+
+/* this large block afffects all form input fields where you can type text in. whether it be changing the padding, border-radius, or background color. */
 input[type="text"] {
     font-family: Montserrat-Light;
     background-color: #f4f4f5;
@@ -222,7 +220,7 @@ footer input[type="submit"] {
 
 /* this @media deals with everything that changes to tablet view. */
 @media (min-width: 768px) {
-    /* the header image would have been huge if i kept it at max-width: 40px; so i had to cut it in half to 20px to fit nicely at the top of the page. */
+    /* the header image would have been huge if i kept it at max-width: 40%; so i had to cut it in half to 20% to fit nicely at the top of the page. */
     header img { 
         max-width: 20%;
     }
@@ -305,88 +303,106 @@ footer input[type="submit"] {
         justify-content: center;
         padding: 10px 25px;
     }
+
     /* for this final line of code in the tablet view, instead of having all of the social media icons squished beside one another, i have a padding on the left and right of 25px so that they are at least a bit spread out, while still centered in the middle of the page. */
     .socialicons img {
         padding: 0 25px;
     }
 }
+
 /* this @media deals with everything that changes to web view. */
 @media (min-width: 1300px) {
+    /* for this "main" block of code, it sets up the whole "grid" layout system for the web view. there are three columns each at 33.3% of the screen as well as three rows at 15vh (162px), 60vh (648px), and 25vh (270px). */
     main {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 15vh 60vh 25vh;
     }
-
+    
+    /* this places the header picture at the top left of the screen. */
     main header {
         grid-column: 1 / 2;
     }
 
+    /* this sets the location for the "Want to be your own boss?" line, as well as the following line below it. */
     main .boss {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
     }
 
+    /* here sets the position for the picture in the middle of the screen. */
     main .scooter {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
     }
 
+    /* this block of code places the "Apply Now" form on the right side of the screen. */
     main .apply {
         grid-column: 3 / 4;
         grid-row: 2 / 3;
     }
 
+    /* finally, this sets the footer across the bottom of the page. */
     main footer {
         grid-column: 1 / span 3;
         grid-row: 3 / 4;
     }
 
+    /* this line of code increases the size of the middle "scooter" image */
     .scooter img {
         max-width: 100%;
-        margin: auto;
     }
 
+    /* here, i wanted to move around the "Apply Now" form, so I readjusted the margin to margin: 0 auto 50px;, also the form was too short for my liking so I decided to increase the length by adding more padding to the bottom by 30px. */
     .apply {
         margin: 0 auto 50px;
         padding-bottom: 30px;
     }
 
+    /* this just decreases the size of both the paragraph texts within the "Apply Now" form. it seemed too large for my liking so that's the reasoning behind the change. */
     .apply p {
         font-size: 1rem;
     }
 
+    /* these two lines swap which text is being displayed underneath the "Apply Now" header in the main form. */
     .apply p:nth-child(2) {
         display: none;
     }
 
+    .apply .web-p {
+        display: block;
+    }
+
+    /* here i'm only changing the top and bottom margin of the input boxes so that they do not take up as much space. */
     input[type="text"] {
-        padding: 15px 0px 15px 20px;
-        border-radius: 5px;
         margin: 5px 0;
     }
 
+    /* this changes decreases the font-size to 1rem (16px) and changes the margin of the "I agree to dash terms" paragraph text. */
     label[for="agree"] {
         font-size: 1rem;
-        margin: 5px auto 5px;
+        margin: 5px auto;
     }
 
+    /* for the submit button, i wanted to make it skinnier so that again, it would fit and look visually appealing. */
     input[type="submit"] {
         padding: 5px 35px;
-        border-radius: 5px;
     }
 
+    /* for the footer, i decided to use display: flex; and flex-wrap: wrap; because when i sketched how the desktop view was going to look, flexbox was instantly what i invisioned. */
     footer {
         display: flex;
         flex-wrap: wrap;
     }
 
+    /* here, i readjusted the font-size of both the h1 and the paragraph text with in the footer so that it looks appealing to the eye. there was a weird looking padding that was applied to the bottom of these two so i decided to remove it. */
     footer h1,
     footer p {
         font-size: 1rem;
         padding-bottom: 0px;
     }
 
+    /* for the h1, paragraph text and the form within the footer, i decided to use flex-basis: 100% because i was looking back at the flexblocks participation and drew inspiration from that. also i set a margin of 3% on the left and right sides so that they line up with .boss. */
     footer h1,
     footer p,
     footer form {
@@ -394,26 +410,31 @@ footer input[type="submit"] {
         margin: 0 3%;
     }
 
+    /* this block of code alters the class "footerform" by making it flexbox, giving it a width of 10 inches and removing its margin. */
     .footerform {
         display: flex;
         width: 10in;
         margin: 0;
     }
 
+    /* this just changes the horizontal size of input box for the "Hours" input. */
     input#hours {
         width: 10%;
     }
-    
+
+    /* not only does this also change the horizontal size of the input box for the "City" input, but it also introduces a left margin of 10px. */
     input#city {
         width: 20%;
         margin-left: 10px;
     }
 
+    /* exact same thing going on in the block of code above is being done here, to the "CALCULATE" submission button, except the width changes from 20% to 25%. */
     footer input[type="submit"] {
         width: 25%;
         margin-left: 10px;
     }
     
+    /* this is a clever trick that i learned in the past, and remembered thanks to the flexblocks participation that, with the help of the left margin, essentially pushes the social icons, in this case, all the way to the far left. */
     .socialicons {
         margin-left: auto;
     }
